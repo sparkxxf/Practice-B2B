@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="order" extends="struts-default" namespace="/order">
+
+		<action name="orderAction_*" class="orderAction" method="{1}">
+			<result name="preparequery">/order/query.jsp</result>
+			<result name="prepareDelete">/order/delete.jsp</result>
+			<result name="to_delete">/order/delete.jsp</result>	
+			<result name="to_create">/order/listProduct.jsp</result>
+			<result name="prepare_buy">/order/addproduct.jsp</result>
+			<result name="buy_success">/commons/success.jsp</result>
+			<result name="buy_fail">/commons/fail.jsp</result>
+			<result name="list_cart">/order/listCart.jsp</result>
+			<result name="to_putAddress">/order/scanAddress.jsp</result>			
+			<result name="view_detail">/order/viewDetail.jsp</result>
+			<result name="create_success">/errors/success.jsp</result>
+			<result name="to_query">/commons/success.jsp</result>
+			<result name="to_approvl">/order/query2approvl.jsp</result>
+			<result name="detailToApprovl">/order/detail2approvl.jsp</result>
+			<result name="queryforUpdate">/order/editOrder.jsp</result>
+			<result name="to_edit">/order/editOrder.jsp</result>
+			<result name="orderDetail">/order/orderDetail.jsp</result>
+			<result name="updateOrder">/order/listCart.jsp</result>
+			<result name="prepareReport">/order/statisticalreport.jsp</result>
+            <result name="statisticalReport">/order/statisticalreport.jsp</result>
+            <result name="order_detail">/order/queryorderetail.jsp</result>
+			
+		</action>
+	</package>
+
+	
+</struts>

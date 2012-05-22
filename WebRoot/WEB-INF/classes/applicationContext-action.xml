@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<bean id="ptypeAction_Service" class="com.tyland.action.ProDuctTypeAction"
+		scope="prototype">
+		<property name="ptypeService"> <!-- ProDuctTypeAction.ptypeService -->
+		<ref bean="ptypeService_Dao" /> <!-- applicationContext-dao.xml.ptypeDao_orcl-->
+		</property>
+	</bean>
+
+
+<bean id="agtAction_Service" class="com.tyland.action.AgentTypeAction"
+		scope="prototype">		
+		<property name="atypeService"> <!-- ProDuctTypeAction.ptypeService -->
+		<ref bean="atypeService_Dao" /> <!-- applicationContext-dao.xml.ptypeDao_orcl-->
+		</property>
+	</bean>
+		
+<bean id="roleAction_Service" class="com.tyland.action.SystemRoleAction"
+		scope="prototype">
+		<property name="roleService"> 
+		<ref bean="roleService_Dao" /> 
+		</property>
+	</bean>
+
+<bean id="userAction_Service" class="com.tyland.action.UserAction"
+		scope="prototype">
+		<property name="commonService">
+				<ref bean="commonService" />
+		</property>
+		<property name="userService"> <!-- ProDuctTypeAction.ptypeService -->
+		<ref bean="userService_Dao" /> <!-- applicationContext-dao.xml.ptypeDao_orcl-->
+		</property>
+	</bean>
+	
+<bean id="categoryAction_Service" class="com.tyland.action.ProCategoryAction" scope="prototype">
+		<property name="commonSer">
+					<ref bean="commonService" />
+		</property>
+		<property name="proCategorySer">
+				<ref bean="proCategoryService" />
+		</property>
+	</bean>
+	
+<bean id="masterAction_Service" class="com.tyland.action.MasterAction"
+		scope="prototype">
+		<property name="commonService">
+				<ref bean="commonService" />
+		</property>
+		<property name="userService">
+		<ref bean="userService_Dao" />
+		</property>
+	</bean>
+	
+<bean id="roleassignAction_Service" class="com.tyland.action.RoleAssignFuncsAction"
+		scope="prototype">
+		<property name="commonSer">
+					<ref bean="commonService" />
+		</property>
+		
+	</bean>
+	
+<bean id="userAssignRoleAction" class="com.tyland.action.UserAssignRoleAction" scope="prototype">
+		<property name="commonSer">
+					<ref bean="commonService" />
+		</property>
+	</bean>
+	
+<bean id="loginAction_Service" class="com.tyland.action.LoginAction" scope="prototype">
+		<property name="commonService">
+				<ref bean="commonService" />
+		</property>
+		<property name="userService">
+				<ref bean="userService_Dao" />
+		</property>
+		<property name="noticeSer">
+			<ref bean="noticeService"/>
+		</property>
+	</bean>
+	
+<bean id="agent_productAction_Service" class="com.tyland.action.AgentProductAction" scope="prototype">
+		<property name="commonSer">
+					<ref bean="commonService" />
+		</property>
+		<property name="agentProductSer">
+					<ref bean="agent_proCategoryService" />
+		</property>
+	</bean>
+	
+<bean id="orderAction" class="com.tyland.action.OrderAction" scope="prototype">
+		<property name="commonSer">
+				<ref bean="commonService" />
+		</property>
+		<property name="orderService">
+				<ref bean="orderService" />
+		</property>
+	</bean>
+	
+<bean id="noticeAction" class="com.tyland.action.NoticeAction" scope="prototype">
+		<property name="commonSer">
+				<ref bean="commonService" />
+		</property>
+		<property name="noticeSer">
+				<ref bean="noticeService" />
+		</property>
+		<property name="userService">
+				<ref bean="userService_Dao" />
+		</property>
+	</bean>
+	
+</beans>

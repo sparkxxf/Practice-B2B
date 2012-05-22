@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="category" namespace="/category" extends="default">
+		<action name="categoryAction_*" class="categoryAction_Service" method="{1}">
+			<result name="success">/category/query.jsp</result>
+			<result name="preAdd">/category/add.jsp</result>
+			<result name="preUpdate">/category/update.jsp</result>
+			<result name="add_success">/errors/success.jsp</result>
+		</action>
+	</package>
+
+</struts>

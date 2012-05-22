@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="default" location="15,25" size="280,140">
+    <action name="home" location="65,57" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="main.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="main.jsp" path="main.jsp" location="105,220" size="150,55" />
+  <include file="struts-user.xml" location="500,395" size="150,30" />
+  <include file="struts-data.xml" location="395,10" size="150,30" />
+  <include file="struts-agent.xml" location="10,395" size="150,30" />
+  <include file="struts-systemrole.xml" location="255,395" size="150,30" />
+  <include file="struts-user.xml" location="500,395" size="150,30" />
+  <include file="struts-category.xml" location="10,500" size="150,30" />
+  <include file="struts-master.xml" location="255,500" size="150,30" />
+  <include file="struts-userrole.xml" location="500,500" size="150,30" />
+  <include file="struts-roleassign.xml" location="10,605" size="150,30" />
+  <include file="struts_master.xml" location="255,605" size="150,30" />
+</Struts2Diagram>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.MenuItem" table="t_menuitem">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" type="java.lang.String" column="name" />
+		<property name="url" type="java.lang.String" column="url" />
+
+		
+	</class>
+
+</hibernate-mapping>

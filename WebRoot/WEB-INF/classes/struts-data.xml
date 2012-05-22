@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="datamanagement" namespace="/data" extends="default">
+		<action name="produtTypeAction_*" class="ptypeAction_Service" method="{1}">
+			<result name="success">/proType/query.jsp</result>
+			<result name="preadd">/proType/add.jsp</result>
+			<result name="preupdate">/proType/update.jsp</result>
+		</action>
+	</package>
+
+</struts>
+<!-- produtTypeAction  -->

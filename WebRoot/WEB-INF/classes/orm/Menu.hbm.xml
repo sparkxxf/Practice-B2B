@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.Menu" table="t_menu">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" type="java.lang.String" column="name" />
+		
+		<list name="menuItemSet" table="t_menuitem" lazy="false" cascade="save-update">
+		     <key column="menu_id"></key>
+		     <list-index column="item_index"></list-index>
+		     <one-to-many class="com.tyland.domain.MenuItem"/>
+		</list>
+		
+	</class>
+
+</hibernate-mapping>

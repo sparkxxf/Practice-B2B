@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="agent_product" namespace="/agent_product" extends="struts-default">
+		<action name="agent_productAction_*" class="agent_productAction_Service" method="{1}">
+			<result name="success">/agent_product/query.jsp</result>
+			<result name="preadd">/agent_product/add.jsp</result>
+			<result name="querypublish">/agent_product/querypublish.jsp</result>
+		</action>
+	</package>
+
+</struts>

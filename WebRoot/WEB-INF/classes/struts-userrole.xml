@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+	<package name="userrole" extends="struts-default" namespace="/userrole">
+		<action name="userAssignRoleAction_*" class="userAssignRoleAction" method="{1}">
+			<result>/user/assignRoles.jsp</result>
+			<result name="add_success">/errors/success.jsp</result>
+		</action>
+	</package>
+
+	
+</struts>

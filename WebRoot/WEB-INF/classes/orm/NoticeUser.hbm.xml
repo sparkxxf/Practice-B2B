@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.NoticeUser" table="t_notice_user">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="readStatus" type="java.lang.Integer" column="readStatus" />
+		
+		<many-to-one name="user"
+			class="com.tyland.domain.User" lazy="false"
+			fetch="select" column="user_id" foreign-key="fk_user_id_01">
+		</many-to-one>
+		
+		<many-to-one name="notice"
+			class="com.tyland.domain.Notice" lazy="false"
+			fetch="select" column="notice_id" foreign-key="fk_notice_id_01">
+		</many-to-one>
+		
+		
+	</class>
+
+</hibernate-mapping>

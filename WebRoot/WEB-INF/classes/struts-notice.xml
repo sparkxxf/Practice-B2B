@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="notice" extends="struts-default" namespace="/notice">
+
+	<action name="noticeAction_*" class="noticeAction" method="{1}">
+		
+			<result>/notice/query.jsp </result>
+			<result name="toAdd">/notice/add.jsp</result>
+			<result name="queryNotRead">/main.jsp</result>
+			<result name="notic_detail">/notice/detail.jsp</result>
+			<result name="add_success" type="redirect">noticeAction_query</result>
+		
+		</action>
+	</package>
+
+	
+</struts>

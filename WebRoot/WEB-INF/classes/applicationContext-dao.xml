@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	
+	<bean id="ptypeDao_orcl" class="com.tyland.dao.impl.ProductTypeDaoImpl"
+		scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	
+	<bean id="atypeDao_orcl" class="com.tyland.dao.impl.AgentTypeDaoImpl"
+		scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<bean id="roleDao_orcl" class="com.tyland.dao.impl.SystemroleDaoImpl"
+		scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	
+	<bean id="userDao_orcl" class="com.tyland.dao.impl.UserDaoImpl"
+		scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="commonDao" class="com.tyland.common.CommonDaoImpl" scope="prototype">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="proCategoryDao" class="com.tyland.dao.impl.ProCategoryDaoImpl" scope="prototype">
+		<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="agent_proCategoryDao" class="com.tyland.dao.impl.AgentProductDaoImpl" scope="prototype">
+		<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	 <bean id="orderDao" class="com.tyland.dao.impl.OrderDaoImpl" scope="prototype">
+	 	<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+		</property>
+	 </bean>
+	 
+	 <bean id="noticeDao" class="com.tyland.dao.impl.NoticeDaoImpl" scope="prototype">
+	 	<property name="sessionFactory">
+				<ref bean="sessionFactory" />
+		</property>
+	 </bean>
+	
+</beans>

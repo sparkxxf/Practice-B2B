@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.SystemRole" table="t_systemrole">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="rolename" type="java.lang.String" column="rolename" />
+		<property name="roledesc" type="java.lang.String" column="roledesc" />
+		
+        <set name="menuItemSet" table="t_role_menuitem" lazy="false">
+			<key column="role_id" />
+			<many-to-many column="menuitem_id"
+				class="com.tyland.domain.MenuItem" />
+		</set>
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="agent" location="10,10" size="225,119">
+    <action name="agentAction_*" location="65,47" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="query.jsp" />
+      </result>
+      <result name="preadd">
+        <resourceEdge source="preadd" routing="0" target="add.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="add.jsp" path="/agent/add.jsp" location="340,30" size="150,55" />
+  <webResource name="query.jsp" path="/data/query.jsp" location="500,50" size="150,55" />
+</Struts2Diagram>
+

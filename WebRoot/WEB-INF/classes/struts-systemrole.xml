@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<package name="systemrole" namespace="/role" extends="struts-default">
+		<action name="systemroleAction_*" class="roleAction_Service" method="{1}">
+			<result >/systemrole/query.jsp</result>
+			<result name="add_success" type="redirect">systemroleAction_query</result> 
+			<result name="toAdd">/systemrole/add.jsp</result> 
+			<result name="preupdate">/systemrole/update.jsp</result> 
+		</action>
+	</package>
+
+</struts>

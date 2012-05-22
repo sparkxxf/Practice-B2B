@@ -1,0 +1,278 @@
+@CHARSET "UTF-8";
+
+/*
+style 3: gray serial:
+color definition:
+body-whole:background: #F0F0F0;(shallow gray) 
+ad:	  background-color: #BBBBBB; color: white; 
+nav:  background-color: #8A8A8A; color: white;
+buttoms: the same as ad.
+*/ /*------------global setting------------*/
+* {
+	padding: 0;
+	margin: 0;
+}
+
+div {
+	display: block;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+body {
+	background: #F0F0F0 none repeat scroll 0 0;
+	/* F0F0F0(gray), F2F2F2(silver) */
+	color: #222222; /* 000000(black), FFFFFF(white) */
+	width: 900px; /* these 2 line are for resizing with browser */
+	margin: auto; /* these 2 line are for resizing with browser */
+	font-family: Arial, Tahoma, helvetica, sans-serif;
+	font-size: 14px;
+	text-align: center; /* make all containing elements align center */
+}
+
+/* contain all the elements */
+	/* #selectorName is used for id="selectorName" */
+#canvas {
+	background-color: #FDEDAF; /* FDEDAF(light yellow) */
+	width: 900px;
+	height: 700px;
+	position: relative;
+}
+
+/*--------advertisment. or logo banner----------*/
+#ad {
+	background-color: #BBBBBB;
+	color: #444444; /* font color, 000000(black) */
+	height: 75px;
+	font-family: Arial;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 0px; /* no margin to top */
+	padding-top: 30px; /* contained elements with 30px top padding */
+}
+
+/*------------navigator bar------------*/
+#nav-bar {
+
+}
+
+
+#nav-bar-old {
+	background-color: #8A8A8A; /* #8A8A8A is gray*/
+	color: #BBBBBB;
+	height: 35px;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+	padding-top: 8px;
+	padding-left: 20px;
+}
+
+#nav-bar-old a {
+	height: 35px;
+	color: #EEEEEE;
+	text-decoration: none;
+	padding-top: 8px;
+	padding-bottom: 13px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+/* 
+Defines the style for normal unvisited links. 
+*/
+#nav-bar-old a:link {
+	
+}
+
+/*
+Defines the style for hovered links.
+A link is hovered when the mouse moves over it.
+*/
+#nav-bar-old a:hover {
+	background-color: #B8B8B8;
+	/* (lighter than the nav, 8A8A8A(deeper) */
+	color: #444444;
+}
+
+/*
+Defines the style for active links.
+A link becomes active once you click on it.
+*/
+#nav-bar-old a:active {
+	
+}
+
+/*
+Defines the style for visited links. 
+*/
+#nav-bar-old a:visited {
+	
+}
+
+/*------------main content------------*/
+	/* .selectorName is for class="selectorName" */
+.main-content {
+	background-color: #ffffff; /* #ffffff(white) */
+	height: auto; /*500px; /* in this place, can set the minimal height */
+	min-height: 490px; /* hold space when actual contents too little */
+	border-style: solid;
+	border-width: 3px;
+	border-color: #BBBBBB;
+}
+
+/*------------path bar------------*/
+.path-bar {
+	background-color: #BBBBBB; /* #BBBBBB is gray*/
+	color: #000000;
+	height: 16px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+}
+
+/*------------content item------------*/
+.content {
+	padding-top: 10px;
+}
+
+.content  table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.td-left {
+	text-align: left;
+	padding-left: 5px;
+}
+
+.td-right {
+	text-align: right;
+	padding-right: 5px;
+}
+
+.errorMessage {
+	color: red;
+	margin-bottom: 10px;
+}
+
+.login-cnt {
+	margin-top: 200px;
+	text-align: center;
+}
+
+.login-cnt table {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+.login-cnt .title {
+	font-size: 28px;
+	margin-bottom: 50px;
+}
+
+/*------------result content------------*/
+.result {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.result .hint {
+	padding-bottom: 5px;
+}
+
+.result table {
+	margin-left: auto;
+	margin-right: auto;
+	COLOR: #CBDAE5;
+	border: 2px;
+	BORDER-COLLAPSE: collapse;
+	border-color: #DBDBDB;
+}
+
+.result-tr-th {
+	BACKGROUND-COLOR: #BBBBBB;
+	color: #444444;
+	FONT-WEIGHT: bold;
+	HEIGHT: 21px;
+}
+
+.result-tr-td {
+	BACKGROUND-COLOR: #eeeeee;
+	COLOR: #333333;
+	HEIGHT: 20px;
+	
+}
+
+.td-left {
+	text-align: left;
+	padding-left: 4px;
+}
+
+.td-right {
+	text-align: right;
+	padding-right: 12px;
+}
+
+/*-------control items-----------*/
+select {
+	background-color: #eaeff3;
+	border-color: #9FA4A8;
+	width: 143px;
+	height: 24px;
+	border: 1px solid #9FA4A8;
+}
+
+input[type='text'],input[type='password'],.cri-ipt {
+	background-color: #eaeff3;
+	border-color: #9FA4A8;
+	width: 140px;
+	height: 22px;
+	border: 1px solid #9FA4A8;
+	vertical-align: middle;
+}
+
+input[type="checkbox"] {
+	background-color: #eaeff3;
+	border-color: #9FA4A8;
+}
+
+textarea {
+	background-color: #eaeff3;
+	border-color: #9FA4A8;
+	border: 1px solid #9FA4A8;
+}
+
+.btn {
+	background-color: #BBBBBB;
+	color: #444444;
+	width: 105px;
+	height: 29px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/*-------end of main content-------*/
+	/*------------copyright------------*/
+#copyright {
+	background-color: #BBBBBB;
+	color: #000000;
+	height: 60px;
+	bottom: 0px;
+}
+
+#copyright #contact-info {
+	background-color: #EEEFEF;
+	color: green;
+	width: 860px;
+	height: 120px;
+	margin: auto;
+}
+
+#copyright #info {
+	padding-top: 20px;
+}
+

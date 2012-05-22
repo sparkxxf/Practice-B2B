@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.Agent" table="t_agent">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="code" type="java.lang.String" column="code" />
+		<property name="name" type="java.lang.String" column="name" />
+		<property name="tel" type="java.lang.String" column="telephone" />
+		<property name="zip" type="java.lang.String" column="zip" />
+		<property name="size" type="java.lang.Integer" column="sizetype" />
+		<property name="address" type="java.lang.String" column="address" />
+		<property name="legal" type="java.lang.String" column="LegalRepresentative" />
+		<property name="fax" type="java.lang.String" column="faxNumber" /> 
+
+		<set name="ManagerSet" table="t_user" lazy="false" cascade="save-update">
+			<key column="management_agent"></key>
+			<one-to-many class="com.tyland.domain.User"/>
+		</set>
+		
+		<set name="PublishProductSet" table="t_agent_productcategory" lazy="false">
+			<key column="agent_id" />
+			<many-to-many column="product_id"
+				class="com.tyland.domain.ProductCategory" />
+		</set>
+	 </class>
+
+</hibernate-mapping>

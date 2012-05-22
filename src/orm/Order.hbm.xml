@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.Order" table="t_order">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="orderCode" type="java.lang.String" column="orderCode" />
+		<property name="receivePeopleName" type="java.lang.String" column="receivePeopleName" />
+		<property name="address" type="java.lang.String" column="address" />
+		<property name="postCode" type="java.lang.String" column="postCode" />
+		<property name="call" type="java.lang.String" column="call" />
+		<property name="createTime" type="java.util.Date" column="createTime" />
+		<property name="approvlTime" type="java.util.Date" column="approvlTime" />
+		<property name="status" type="java.lang.Integer" column="status" />
+		<property name="order_comment" type="java.lang.String" column="order_comment" />
+		
+		<many-to-one name="create_user" class="com.tyland.domain.User" lazy="false" column="creat_userid">
+		</many-to-one>
+		<many-to-one name="approvl_user" class="com.tyland.domain.User" lazy="false" column="approvl_userid">
+		</many-to-one>
+		<set name="itemSet" table="t_order_item" lazy="false" cascade="save-update">
+		     <key column="orderid"></key>
+		     <one-to-many class="com.tyland.domain.OrderItem"/>
+		</set>
+	</class>
+
+</hibernate-mapping>

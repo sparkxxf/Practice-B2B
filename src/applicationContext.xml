@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:applicationContext.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<import resource="classpath:applicationContext-action.xml" />
+	<import resource="classpath:applicationContext-service.xml" />
+	<import resource="classpath:applicationContext-dao.xml" />
+	<import resource="classpath:applicationContext-orm.xml" />
+
+</beans>

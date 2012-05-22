@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.User" table="t_user">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="type" type="java.lang.Integer" column="type" />
+		<property name="userName" type="java.lang.String" column="username" />
+		<property name="password" type="java.lang.String" column="password" />
+		<property name="realName" type="java.lang.String" column="realname" />
+		<property name="email" type="java.lang.String" column="email" />
+		<property name="dead_line" type="java.util.Date" column="deadline" />
+		<property name="tel" type="java.lang.String" column="mobile" />
+		<property name="remark" type="java.lang.String" column="remark" />
+		<property name="enabled_approval" type="java.lang.Integer" column="enabled_approval" />
+		
+		<!--用户与所属企业的多对一关系(用户是企业客户时)-->
+		<many-to-one name="agent" class="com.tyland.domain.Agent" lazy="false"
+		 fetch="select" column="own_agent" foreign-key="fk_own_agent_id"></many-to-one>
+		 
+		<!--用户与所属企业的多对一关系(用户是大客户经理时)-->
+		<many-to-one name="management_agent" class="com.tyland.domain.Agent" lazy="false"
+		 fetch="select" column="management_agent" foreign-key="fk_manage_agent_id"></many-to-one> 
+		 
+		<!-- 用户和角色的多对多关系 -->	
+		<set name="roles" table="t_user_role" lazy="false">
+			<key column="user_id" />
+			<many-to-many column="role_id"
+				class="com.tyland.domain.SystemRole" />
+		</set>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.tyland.domain.ProductCategory" table="t_product_category">
+
+		<id name="id" type="java.lang.Integer" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="brand" type="java.lang.String" column="band" />
+		<property name="type" type="java.lang.String" column="type" />
+		<property name="quan" type="java.lang.String" column="quan" />
+		<property name="prize" type="java.lang.Integer" column="prize" />
+		<property name="desc" type="java.lang.String" column="description" />
+		<property name="spe" type="java.lang.String" column="spe" />
+		<property name="remark" type="java.lang.String" column="remark" />
+		
+			
+		<many-to-one name="productType" class="com.tyland.domain.ProductType" lazy="false" 
+			fetch="select" column="product_type" foreign-key="fk_owner_productType">
+		</many-to-one>
+				
+
+	 </class>
+
+</hibernate-mapping>

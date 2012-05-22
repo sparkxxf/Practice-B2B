@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="b2b"
+  id="myeclipse.1332144452171"
+  context-root="/b2b"
+  j2ee-spec="5.0"
+  archive="b2b.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

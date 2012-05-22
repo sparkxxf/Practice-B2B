@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<package name="default" extends="struts-default">
+	
+	<global-results>
+			<result name="runtimeException">/errors/errorRunTimeException.jsp</result>
+	</global-results>
+	
+	<global-exception-mappings>
+		<exception-mapping result="runtimeException" exception="java.lang.Exception"/>
+	</global-exception-mappings>	
+	
+	
+	<action name="home">
+		<result>main.jsp</result>
+	</action>
+</package>
+
+<include file="struts-user.xml"></include>
+<include file="struts-data.xml"></include>
+<include file="struts-agent.xml"></include>
+<include file="struts-systemrole.xml"></include>
+<include file="struts-user.xml"></include>
+<include file="struts-category.xml"></include>
+<include file="struts-master.xml"></include>
+<include file="struts-login.xml"></include>
+<include file="struts-agent_product.xml"></include>
+<include file="struts-userrole.xml"></include>
+<include file="struts-roleassign.xml"></include>
+<include file="struts-order.xml"></include>
+<include file="struts-notice.xml"></include>
+
+
+<constant name="struts.configuration.xml.reload" value="true"/>
+<constant name="devMode" value="true"></constant>
+</struts>

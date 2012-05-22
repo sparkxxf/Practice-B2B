@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="ptypeService_Dao" class="com.tyland.service.impl.ProductTypeServiceImpl"
+		scope="prototype">
+		<property name="ptypeDao"> <!-- ProductTypeServiceImpl.ptypeDao -->
+			<ref bean="ptypeDao_orcl" /> <!-- applicationContext-dao.xml.ptypeDao_orcl-->
+		</property>
+	</bean>
+
+	<bean id="atypeService_Dao" class="com.tyland.service.impl.AgentTypeServiceImpl"
+		scope="prototype">
+		<property name="atypeDao"> <!-- ProductTypeServiceImpl.ptypeDao -->
+			<ref bean="atypeDao_orcl" /> <!-- applicationContext-dao.xml.ptypeDao_orcl-->
+		</property>
+	</bean>
+	
+	<bean id="roleService_Dao" class="com.tyland.service.impl.SystemroleServiceImpl"
+		scope="prototype">
+		<property name="roleDao">
+			<ref bean="roleDao_orcl" />
+		</property>
+	</bean>
+	
+	
+	<bean id="userService_Dao" class="com.tyland.service.impl.UserServiceImpl"
+		scope="prototype">
+		<property name="userDao"> <!-- ProductTypeServiceImpl.ptypeDao -->
+			<ref bean="userDao_orcl" /> <!-- applicationContext-dao.xml.ptypeDao_orcl-->
+		</property>
+	</bean>
+	
+	<bean id="commonService" class="com.tyland.common.CommonServiceImpl" scope="prototype">
+		<property name="commonDao">
+				<ref bean="commonDao" />
+		</property>
+	</bean>
+	
+	<bean id="proCategoryService" class="com.tyland.service.impl.ProCategoryServiceImpl" scope="prototype">
+		<property name="proCategoryDao">
+				<ref bean="proCategoryDao" />
+		</property>
+	</bean>
+	
+	<bean id="agent_proCategoryService" class="com.tyland.service.impl.AgentProductServiceImpl" scope="prototype">
+		<property name="agentproductdao">
+				<ref bean="agent_proCategoryDao" />
+		</property>
+	</bean>
+	
+	 <bean id="orderService" class="com.tyland.service.impl.OrderServiceImpl" scope="prototype">
+		<property name="orderDao">
+			<ref bean="orderDao" />
+		</property>
+	</bean>
+	
+	<bean id="noticeService" class="com.tyland.service.impl.NoticeServiceImpl" scope="prototype">
+		<property name="noticeDao">
+			<ref bean="noticeDao" />
+		</property>
+	</bean>
+	
+</beans>
